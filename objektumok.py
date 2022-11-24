@@ -26,39 +26,40 @@ class Jelszoobjektum():
         for _ in range(self.jelszohossz):
             self.jelszo = self.jelszo + karakterlista[random.randint(0, len(karakterlista) - 1)]
 
+
 class Szemely(Jelszoobjektum):
     def __init__(self):
         super().__init__()
-        self.nev = ''
+        self.nev = 'nev'
         self.kor = 0
-        self.email = ''
-    def email_ellenrozes(sel, email):
+        self.email = 'email'
+
+    def email_ell(self, email):
         if '@' not in email:
             print('Nem jó az email!')
 
-class Dolgozok(Szemely):
+
+class Dolgozo(Szemely):
     def __init__(self):
         super().__init__()
-        self.reszleg = ''
-        self.beosztas = ''
-        self.fizetes = ''
+        self.beosztas = 'beosztas'
+        self.reszleg = 'reszleg'
+        self.fizetes = 0
+
 
 if __name__ == '__main__':
-    dolg1 = Dolgozok()
-    print(dolg1.nev, dolg1.kor, dolg1.email, dolg1.reszleg, dolg1.beosztas, dolg1.fizetes)
-    dolg1.jelszohossz = 15
-    dolg1.jelszogenerator()
-    print(dolg1.jelszo)
+    dolgozo1 = Dolgozo()
+    print(dolgozo1.nev, dolgozo1.kor, dolgozo1.email, dolgozo1.reszleg, dolgozo1.beosztas, dolgozo1.fizetes)
+    dolgozo1.jelszohossz = 10
+    dolgozo1.jelszogenerator()
+    print(dolgozo1.jelszo)
+    dolgozo1.email_ell(dolgozo1.email)
 
-    dolg1.email_ellenrozes(dolg1.email)
-
-
-
-    '''pwd = Jelszoobjektum()
+'''    pwd = Jelszoobjektum()
     pwd.van_irasjel = True
     pwd.jelszogenerator()
-
     print(pwd.jelszo)
     print(pwd.jelszohossz)
     print(pwd.van_szamjegy)
-    print(pwd.van_irasjel)'''
+    print(pwd.van_irasjel)
+'''
